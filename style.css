@@ -1,0 +1,123 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    position: relative; /* add position relative for pseudo-element */
+    min-height: 100vh;
+}
+body::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(imgs/a-2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.95; /* set background image opacity */
+    animation: background-image 3s linear alternate infinite;    
+    border-radius: 120px 0 120px 0;
+    }
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+
+}
+.project {
+    background-color: #f0f0f0;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 500ms ease-out;
+    border-radius: 20px;
+    margin-top: 100px;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+
+.project:hover .project-image img {
+    transform: scale(1.1);
+}
+.project:hover .project-content {
+    transform: translateY(-50%);
+}
+.project-image {
+    position: relative;
+}
+.project-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    border-radius: 10px;
+}
+.project-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transition: opacity .5s, transform 0.5s;
+    width: 90%;
+}
+.project-content h2 {
+    text-align: center;
+    font-weight: bold;
+}
+.project-content p {
+    margin-top: 10px;
+    font-style: italic;
+}
+.project-content a {
+    background-color: #333;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    transition: .5s;
+    width: fit-content;
+}
+.project-content a:hover {
+    scale: 0.95;
+    background-color: #3498db;
+    color: #fff;
+}
+.project:hover .project-content {
+    opacity: 1;
+}
+@media only screen and (max-width: 768px) {
+        main {
+            padding: 0;
+            gap: 0;
+            }
+    
+    .project {
+    width: 100%;
+    }
+    body::before{
+        border-radius: 50px 0 50px 0;
+    }
+    
+}  
